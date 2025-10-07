@@ -1,0 +1,17 @@
+torch==2.4.1 --index-url https://download.pytorch.org/whl/cu124
+torchvision==0.19.1 --index-url https://download.pytorch.org/whl/cu124
+pytorch-lightning==2.3.3
+lightning-utilities
+omegaconf==2.3.0
+albumentations
+einops
+numpy
+opencv-python
+imageio
+wandb
+matplotlib
+natsort
+lpips
+timm
+sympy
+scikit-image

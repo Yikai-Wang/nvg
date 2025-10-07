@@ -1,0 +1,67 @@
+model:
+  base_learning_rate: 1e-4
+  monitor: 'val/loss'
+  target: nvg.models.generator.NVGenerator
+  params:
+    cfg: True
+    cfg_rate: 0.1
+    use_ema: True
+    use_repa: True
+    repa_depth: 8
+    repa_loss_scale: 0.5
+    nvgformer_config:
+      target: nvg.modules.generatormodules.nvgflow.NVGformer
+      params:
+        vocab_size: 4096
+        num_tokens: [1, 2, 4, 8, 16, 32, 64, 128, 256]
+        mlp_ratio: 4
+        depth: 24
+        structure_down_factor: 2
+        drop_path: True
+        use_repa: True
+        disable_vec_head: True
+    first_stage_config:
+      target: nvg.models.downsample.VQAE
+      params:
+        embed_dim: 32
+        n_embed: 4096
+        v_patch_nums: (1, 2, 4, 8, 16, 32, 64, 128, 256)
+        monitor: 'val/rec_loss'
+        cnn_type: '2d'
+        cnn_norm_axis: 'spatial'
+        base_ch: 128
+        encoder_ch_mult: [1, 2, 4, 4, 4]
+        decoder_ch_mult: [1, 2, 4, 4, 4]
+        num_res_blocks: 2
+        downsampled_size: 16
+        temporal_patch_size: 4
+        ignore_keys: ['total_visited_codes', 'loss']
+        ckpt_path: 'ckpt/ae.ckpt'
+data:
+  target: main.DataModuleFromConfig
+  params:
+    batch_size: 6
+    num_workers: 12
+    wrap: false
+    train:
+      target: nvg.data.imagenet.ImageNetTrain
+      params:
+        config:
+          size: 256
+    validation:
+      target: nvg.data.imagenet.ImageNetValidation
+      params:
+        config:
+          size: 256
+
+lightning:
+  trainer:
+    benchmark: False
+    max_epochs: 350
+    gradient_clip_val: 1.0
+    accumulate_grad_batches: 3
+    log_every_n_steps: 1
+    num_nodes: 1 #6
+    devices: 1 #8
+    accelerator: gpu
+    precision: bf16-mixed
