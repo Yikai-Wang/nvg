@@ -12,12 +12,12 @@ S-Lab, Nanyang Technological University; SenseTime Research<br>
 
 <table>
   <tr>
-    <td><img src="asserts/0.png.gif" alt="GIF 0" width="100%"></td>
-    <td><img src="asserts/1.png.gif" alt="GIF 1" width="100%"></td>
+    <td><img src="asserts/0.gif" alt="GIF 0" width="100%"></td>
+    <td><img src="asserts/1.gif" alt="GIF 1" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="asserts/2.png.gif" alt="GIF 2" width="100%"></td>
-    <td><img src="asserts/3.png.gif" alt="GIF 3" width="100%"></td>
+    <td><img src="asserts/2.gif" alt="GIF 2" width="100%"></td>
+    <td><img src="asserts/3.gif" alt="GIF 3" width="100%"></td>
   </tr>
 </table>
 
