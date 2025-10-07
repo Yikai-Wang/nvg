@@ -10,6 +10,13 @@ Yikai Wang, Zhouxia Wang, Zhonghua Wu, Qingyi Tao, Kang Liao, Chen Change Loy.<b
 S-Lab, Nanyang Technological University; SenseTime Research<br>
 </p>
 
+<p align="center">
+<img src="asserts/0.png.gif" alt="GIF 0" style="width:40%;">
+<img src="asserts/1.png.gif" alt="GIF 0" style="width:40%;">
+<img src="asserts/2.png.gif" alt="GIF 0" style="width:40%;">
+<img src="asserts/3.png.gif" alt="GIF 0" style="width:40%;">
+</p>
+
 ## Overview
 
 We propose a novel approach to image generation by decomposing an image into a structured sequence, where each element in the sequence shares the same spatial resolution but differs in the number of unique tokens used, capturing different level of visual granularity.<br>
