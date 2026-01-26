@@ -8,6 +8,7 @@
 <p align="center">
 Yikai Wang, Zhouxia Wang, Zhonghua Wu, Qingyi Tao, Kang Liao, Chen Change Loy.<br>
 S-Lab, Nanyang Technological University; SenseTime Research<br>
+<b>ICLR 2026</b><br>
 </p>
 
 <table>
